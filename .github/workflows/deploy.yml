@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main  # deploy on pushes to main
+      - main
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate package-lock.json
+      - name: Install dependencies & generate package-lock.json
         run: npm install
 
       - name: Build project
