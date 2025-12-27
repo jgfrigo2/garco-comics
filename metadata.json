@@ -1,0 +1,5 @@
+{
+  "name": "Garco Comics for iOS",
+  "description": "Organitzador i lector de còmics personalitzat per a la col·lecció Spider-Man. Sincronització al núvol i integració amb Google Drive.",
+  "requestFramePermissions": []
+}
