@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}"
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -14,16 +14,16 @@ export default {
           darkBlue: '#004D74',
           black: '#1a1a1a',
           yellow: '#FBBF24',
-        }
+        },
       },
       fontFamily: {
         comic: ['Bangers', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'comic-dots': "radial-gradient(#004D74 1px, transparent 1px)",
+        'comic-dots': 'radial-gradient(#004D74 1px, transparent 1px)',
       },
     },
   },
   plugins: [],
-};
+}
