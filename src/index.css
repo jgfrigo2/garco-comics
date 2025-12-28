@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS-safe base fixes */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
