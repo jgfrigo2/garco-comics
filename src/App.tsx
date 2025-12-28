@@ -271,7 +271,7 @@ const App: React.FC = () => {
   if (state.currentView === 'reader' && currentVolume) {
     const totalPages = currentVolume.pages.length;
     return (
-      <div className="h-full w-screen bg-black flex flex-col overflow-hidden fixed inset-0 z-[100]">
+      <div className="h-screen w-screen font-sans flex flex-col md:flex-row bg-spidey-black overflow-hidden">
         <div className="h-14 bg-spidey-black/95 border-b border-gray-800 flex items-center justify-between px-4 text-white shrink-0 z-20 shadow-lg backdrop-blur safe-top">
             <button onClick={closeReader} className="flex items-center gap-1 hover:text-spidey-red transition-colors font-bold uppercase text-xs tracking-tight">
                 <ChevronLeft size={24} /> <span>Tanca</span>
@@ -319,7 +319,7 @@ const App: React.FC = () => {
         <div className="fixed inset-0 bg-black/80 z-40 md:hidden backdrop-blur-sm" onClick={() => setIsSidebarOpen(false)}></div>
       )}
 
-      <aside className={`fixed md:sticky top-0 left-0 h-full w-72 bg-spidey-red text-white z-50 transition-transform duration-300 transform border-r-0 md:border-r-4 md:border-black shadow-2xl flex flex-col shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+      <aside className={`fixed md:sticky top-0 left-0 h-screen md:h-full w-72 bg-spidey-red text-white z-50 transition-transform duration-300 transform border-r-0 md:border-r-4 md:border-black shadow-2xl flex flex-col shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="absolute inset-0 opacity-10 bg-spider-web pointer-events-none"></div>
         <div className="p-6 border-b-4 border-black bg-spidey-red relative z-10 flex justify-between items-center shrink-0 safe-top">
           <h1 className="text-3xl font-comic tracking-wider text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] -rotate-1">
@@ -377,14 +377,14 @@ const App: React.FC = () => {
         </div>
       </aside>
 
-      <main className="flex-1 flex flex-col h-full overflow-hidden bg-comic-dots relative">
+      <main className="flex-1 flex flex-col min-h-0 overflow-hidden bg-comic-dots relative">
         <header className="md:hidden bg-spidey-red text-white p-4 flex justify-between items-center border-b-4 border-black shadow-md shrink-0 z-30 safe-top">
             <button onClick={() => setIsSidebarOpen(true)} className="p-2 bg-black/20 rounded-lg"><Menu size={28}/></button>
             <span className="font-comic text-2xl tracking-wider uppercase">{APP_TITLE}</span>
             <div className="w-10"></div>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-4 md:p-10 lg:p-16 relative scroll-smooth bg-comic-dots safe-bottom">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-10 lg:p-16 relative bg-comic-dots safe-bottom">
             {!state.selectedSeries ? (
                 <div className="max-w-6xl mx-auto pb-20">
                     <div className="mb-10 flex flex-col md:flex-row justify-between items-end gap-6 border-b-4 border-black pb-4">
