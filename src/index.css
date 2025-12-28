@@ -1,46 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Global layout */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100dvh;
+  height: 100%; /* Change from min-height */
   background-color: #1a1a1a;
-  overflow-x: hidden;
+  overflow: hidden; /* Add this */
+  -webkit-text-size-adjust: 100%;
 }
 
 #root {
-  min-height: 100dvh;
+  height: 100%; /* Change from min-height */
+  width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Add this */
 }
 
-/* Loader */
-.initial-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: white;
-  font-family: 'Bangers', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  padding: 20px;
+/* Add safe area padding for iOS */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
 }
 
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(226, 54, 54, 0.3);
-  border-top-color: #E23636;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-@keyframes spin { to { transform: rotate(360deg); } }
+/* Fix scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
